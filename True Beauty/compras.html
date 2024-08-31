@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compras</title>
+    <link rel="shortcut icon" href="IMAGENLOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="compras.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Puntos.html">Puntos</a>
+            <a href="Categorías.html">Categorías</a>
+            <a href="GiftCard.html">Gift Card</a>
+            <a href="QuienesSomos.html">Quiénes somos</a>
+            <a href="Contáctanos.html">Contáctanos</a>
+            <a href="Opiniones.html">Opiniones</a>
+            <a href="IniciarSesion.html">Iniciar Sesión</a>
+        </nav>
+
+        <section class="textos-header">
+            <h1>COMPRAS</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;">
+                </path>
+            </svg>
+        </div>
+    </header>
+
+
+    <div id="producto" class="product-container">
+        <img id="imagenProducto" alt="Producto">
+        <div class="product-details">
+            <h1 id="nombreProducto" style="text-align: center;"></h1>
+            <table id="especificacionesProducto">
+                <tr>
+                    <th>Especificaciones</th>
+                    <th>Valores</th>
+                </tr>
+            </table>
+            <button id="botonCompra">Consultar Talla</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        var imagen = localStorage.getItem('imagen');
+        var nombre = localStorage.getItem('producto');
+        var especificaciones = JSON.parse(localStorage.getItem('especificaciones'));
+        var precio = localStorage.getItem('precio');
+        var color = localStorage.getItem('color');
+
+        document.getElementById('imagenProducto').src = imagen;
+        document.getElementById('nombreProducto').textContent = nombre;
+
+        var tabla = document.getElementById('especificacionesProducto');
+        for (var especificacion in especificaciones) {
+            var fila = tabla.insertRow();
+            var celda1 = fila.insertCell();
+            var celda2 = fila.insertCell();
+            celda1.textContent = especificacion;
+            celda2.textContent = especificaciones[especificacion];
+        }
+    </script>
+
+    <div id="ventanaEmergente" class="ventana-emergente">
+        <h2>Selecciona tu talla:</h2>
+        <label for="talla">Talla:</label>
+        <select id="talla" name="talla">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+    </select>
+        <button id="confirmarCompra">Confirmar </button>
+    </div>
+
+
+    <script>
+        // Obtén la ventana emergente y el botón de compra
+        var ventanaEmergente = document.getElementById('ventanaEmergente');
+        var botonCompra = document.getElementById('botonCompra');
+
+        // Agrega un evento click al botón de compra
+        botonCompra.addEventListener('click', function() {
+            // Muestra la ventana emergente
+            ventanaEmergente.style.display = 'block';
+        });
+
+        // Obtén la selección de talla y el botón de confirmar compra
+        var tallaSeleccionada = document.getElementById('talla');
+        var confirmarCompra = document.getElementById('confirmarCompra');
+
+        // Agrega un evento click al botón de confirmar compra
+        confirmarCompra.addEventListener('click', function() {
+            // Obtiene la talla seleccionada por el usuario
+            var tallaElegida = tallaSeleccionada.value;
+
+            // Obtiene la cantidad disponible para cada talla (deberías obtener estos valores desde tu base de datos o donde los almacenes)
+            var cantidadDisponibleS = 10; // Cantidad disponible para talla S
+            var cantidadDisponibleM = 5; // Cantidad disponible para talla M
+            var cantidadDisponibleL = 8; // Cantidad disponible para talla L
+            var cantidadDisponibleXL = 0; // Cantidad disponible para talla XL
+
+            // Verifica la cantidad disponible para la talla seleccionada
+            var mensaje = 'Talla: ' + tallaElegida + '\n';
+
+            switch (tallaElegida) {
+                case 'S':
+                    mensaje += 'Cantidad disponible: ' + cantidadDisponibleS;
+                    break;
+                case 'M':
+                    mensaje += 'Cantidad disponible: ' + cantidadDisponibleM;
+                    break;
+                case 'L':
+                    mensaje += 'Cantidad disponible: ' + cantidadDisponibleL;
+                    break;
+                case 'XL':
+                    mensaje += 'Cantidad disponible: ' + cantidadDisponibleXL;
+                    break;
+            }
+
+            // Muestra un mensaje con la cantidad disponible
+            alert(mensaje);
+
+            // Cierra la ventana emergente
+            ventanaEmergente.style.display = 'none';
+        });
+    </script>
+    <button id="realizarCompra">Realizar Compra</button>
+    <script>
+        // Obtén el botón de "Realizar Compra" y agrega un evento click
+        var realizarCompraButton = document.getElementById('realizarCompra');
+        realizarCompraButton.addEventListener('click', function() {
+            // Número de WhatsApp y mensaje
+            var numeroWhatsApp = '+59167177161';
+            var nombreProducto = localStorage.getItem('producto');
+            var tallaElegida = document.getElementById('talla').value;
+            var mensaje = 'Deseo adquirir el producto "' + nombreProducto + '" en talla ' + tallaElegida;
+
+            // Crea la URL de WhatsApp
+            var whatsappURL = 'https://wa.me/' + 59167177161 + '?text=' + encodeURIComponent(mensaje);
+
+            // Abre la ventana de WhatsApp en una nueva pestaña
+            window.open(whatsappURL);
+
+            // Cierra la ventana emergente de selección de talla
+            ventanaEmergente.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Teléfono</h4>
+            <p>67177161</p>
+        </div>
+        <div class="content-foo">
+            <h4>Correo</h4>
+            <p>TrueBeauty@gmail.com</p>
+        </div>
+        <div class="content-foo">
+            <h4>Ubicación</h4>
+            <p>Local 18. Centro de Moda. Calle 21 San Miguel, La Paz</p>
+        </div>
+        <!-- Redes Sociales -->
+        <div class="content-foo">
+            <h4>Redes Sociales</h4>
+
+            <a href="https://www.facebook.com/lucianaz2604/" target="_blank" rel="noopener noreferrer"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com/lucianaz2604" target="_blank" rel="noopener noreferrer"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="https://wa.me/+59167177161" target="_blank" rel="noopener noreferrer"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/lialu_26/" target="_blank" rel="noopener noreferrer"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@lulu_26.5?lang=es" target="_blank" rel="noopener noreferrer"><img src="tiktok-icon.png" alt="TikTok"></a>
+            <a href="https://www.messenger.com/t/100008816411953" target="_blank" rel="noopener noreferrer"><img src="messenger-icon.png" alt="Messenger"></a>
+
+        </div>
+    </div>
+    <img src="IMAGENLOGO.png" alt="">
+    <h2 class="titulo-final">&copy; LZ Design | True Beauty</h2>
+</footer>
+
+
+</html>

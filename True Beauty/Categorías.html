@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Categorías</title>
+    <link rel="shortcut icon" href="IMAGENLOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="Categorías.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Puntos.html">Puntos</a>
+            <a href="Categorías.html">Categorías</a>
+            <a href="GiftCard.html">Gift Card</a>
+            <a href="QuienesSomos.html">Quiénes somos</a>
+            <a href="Contáctanos.html">Contáctanos</a>
+            <a href="Opiniones.html">Opiniones</a>
+            <a href="IniciarSesion.html">Iniciar Sesión</a>
+        </nav>
+        <section class="textos-header">
+            <h1>¡CATEGORÍAS!</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;">
+                </path>
+            </svg>
+        </div>
+    </header>
+    <Main>
+        <!-- Sección de Categorías y Buscador -->
+        <section class="categories-section">
+            <!-- Buscador -->
+            <div class="search-container">
+
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button type="button" id="search-button">Buscar</button>
+
+            </div>
+
+            <!-- Tabla de Categorías -->
+            <table class="category-table">
+                <tr>
+                    <th>Categorías</th>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="all">> Ver Todo</a></td>
+                </tr>
+
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Vestido">> Vestidos</a></td>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Crop">> Crop Tops</a></td>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Body">> Bodys</a></td>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Falda">> Faldas </a></td>
+                </tr>
+
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Jeans/ Jogger">> Jeans y Joggers</a></td>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Camisa">> Camisas</a></td>
+                </tr>
+                <tr>
+                    <td><a class="category-link" href="#" data-category="Buzo/Chaqueta">> Buzos y Chaquetas</a></td>
+
+                </tr>
+            </table>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="product-gallery">
+            <!-- Producto 1 -->
+
+            <div class="product" data-category="Crop">
+                <img src="PRD1.png" alt="Producto 1">
+                <h3>Crop-Top Negro</h3>
+                <p>Precio: Bs. 50</p>
+                <button onclick="guardarProducto('PRD1.png', 'Crop-Top Negro')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!--es general-->
+            <script>
+                productos = {
+                    'Crop-Top Negro': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '50 Bs',
+                        'Color': 'Negro'
+                    },
+                    'Falda Azul': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '60 Bs',
+                        'Color': 'Azul'
+                    },
+                    'Body Rojo': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '120 Bs',
+                        'Color': 'Rojo'
+                    },
+                    'Chaqueta de mezclilla duo': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '250 Bs',
+                        'Color': 'Azul'
+                    },
+                    'Jeans Claros': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '190 Bs',
+                        'Color': 'Azul'
+
+                    },
+                    'Camisa a rayas': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '105 Bs',
+                        'Color': 'Azul/Blanco'
+                    },
+                    'Buzo café': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '130 Bs',
+                        'Color': 'Café'
+                    },
+                    'Vestido Verde': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '170 Bs',
+                        'Color': 'Verde'
+                    },
+                    'Jogger Plomo': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '85 Bs',
+                        'Color': 'Plomo'
+                    },
+                    'Crop Top Grís': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '70 Bs',
+                        'Color': 'Gris'
+                    },
+                    'Falda Morada': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '110 Bs',
+                        'Color': 'Morado'
+                    },
+                    'Camisa azul': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '108 Bs',
+                        'Color': 'Azul'
+                    },
+                    'Chaqueta de cuero lila': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '150 Bs',
+                        'Color': 'Lila'
+                    },
+                    'Body Blanco y Negro': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '150 Bs',
+                        'Color': 'Blanco/Negro'
+                    },
+                    'Vestido Floreado Lila': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '125 Bs',
+                        'Color': 'Lila'
+                    },
+                    'Jeans Acampanados': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '135 Bs',
+                        'Color': 'Azul'
+                    },
+                    'Buzo Guindo': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '120 Bs',
+                        'Color': 'Guindo'
+                    },
+                    'Falda Jean Floreada': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '60 Bs',
+                        'Color': 'Azul'
+                    },
+                    'Chaqueta Bomber Guinda': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '140 Bs',
+                        'Color': 'Guinda'
+                    },
+                    'Crop Top Celeste Floreado': {
+                        'Tallas': 'S, M, L, XL',
+                        'Precio': '75 Bs',
+                        'Color': 'Celeste/Floreado'
+                    }
+                }
+
+
+                function guardarProducto(rutaImagen, nombreProducto) {
+                    localStorage.setItem('imagen', rutaImagen);
+                    localStorage.setItem('producto', nombreProducto);
+                    localStorage.setItem('especificaciones', JSON.stringify(productos[nombreProducto]));
+                    localStorage.setItem('precio', productos[nombreProducto]['Precio']);
+                    localStorage.setItem('color', productos[nombreProducto]['Color']);
+
+                    // Redirige al usuario a la página de compras
+                    window.location.href = 'compras.html';
+                }
+            </script>
+            <!--hasta aca-->
+
+
+            <!-- Producto 2 -->
+            <div class="product" data-category="Falda">
+                <img src="PRD2.png" alt="Falda Azul">
+                <h3>Falda Azul</h3>
+                <p>Precio: Bs. 60</p>
+                <button onclick="guardarProducto('PRD2.png', 'Falda Azul')"><a>Ver Detalles</a></button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product" data-category="Body">
+                <img src="PRD3.png" alt="Body Rojo">
+                <h3>Body Rojo</h3>
+                <p>Precio: Bs. 120</p>
+                <button onclick="guardarProducto('PRD3.png', 'Body Rojo')"><a>Ver Detalles</a></button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="product" data-category="Buzo/Chaqueta">
+                <img src="PRD4.png" alt="Chaqueta de mezclilla duo">
+                <h3>Chaqueta de mezclilla duo</h3>
+                <p>Precio: Bs. 250</p>
+                <button onclick="guardarProducto('PRD4.png', 'Chaqueta de mezclilla duo')"><a>Ver Detalles</a></button>
+            </div>
+            <!-- Producto 5 -->
+            <div class="product" data-category="Jeans/ Jogger">
+                <img src="PRD5.png" alt="Jeans Claros">
+                <h3>Jeans Claros</h3>
+                <p>Precio: Bs. 190</p>
+                <button onclick="guardarProducto('PRD5.png', 'Jeans Claros')"><a>Ver Detalles</a></button>
+            </div>
+            <!-- Producto 6 -->
+            <div class="product" data-category="Camisa">
+                <img src="PRD6.png" alt="Camisa a rayas">
+                <h3>Camisa a rayas</h3>
+                <p>Precio: Bs. 105</p>
+                <button onclick="guardarProducto('PRD6.png', 'Camisa a rayas')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="product" data-category="Buzo/Chaqueta">
+                <img src="PRD7.png" alt="Buzo café">
+                <h3>Buzo café</h3>
+                <p>Precio: Bs. 130</p>
+                <button onclick="guardarProducto('PRD7.png', 'Buzo café')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="product" data-category="Vestido">
+                <img src="PRD8.png" alt="Vestido Verde">
+                <h3>Vestido Verde</h3>
+                <p>Precio: Bs. 170</p>
+                <button onclick="guardarProducto('PRD8.png', 'Vestido Verde')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="product" data-category="Jeans/ Jogger">
+                <img src="PRD9.png" alt="Jogger Plomo">
+                <h3>Jogger Plomo</h3>
+                <p>Precio: Bs. 85</p>
+                <button onclick="guardarProducto('PRD9.png', 'Jogger Plomo')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="product" data-category="Crop">
+                <img src="PRD10.png" alt="Crop Top Grís">
+                <h3>Crop Top Grís</h3>
+                <p>Precio: Bs. 70</p>
+                <button onclick="guardarProducto('PRD10.png', 'Crop Top Grís')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 11 -->
+            <div class="product" data-category="Falda">
+                <img src="PRD11.png" alt="Falda Morada">
+                <h3>Falda Morada</h3>
+                <p>Precio: Bs. 110</p>
+                <button onclick="guardarProducto('PRD11.png', 'Falda Morada')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 12 -->
+            <div class="product" data-category="Camisa">
+                <img src="PRD12.png" alt="Camisa azul">
+                <h3>Camisa azul</h3>
+                <p>Precio: Bs. 108</p>
+                <button onclick="guardarProducto('PRD12.png', 'Camisa azul')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 13 -->
+            <div class="product" data-category="Buzo/Chaqueta">
+                <img src="PRD13.png" alt="Chaqueta de cuero lila">
+                <h3>Chaqueta de cuero lila</h3>
+                <p>Precio: Bs. 150</p>
+                <button onclick="guardarProducto('PRD13.png', 'Chaqueta de cuero lila')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 14 -->
+            <div class="product" data-category="Body">
+                <img src="PRD14.png" alt="Body Blanco y Negro">
+                <h3>Body Blanco y Negro</h3>
+                <p>Precio: Bs. 150</p>
+                <button onclick="guardarProducto('PRD14.png', 'Body Blanco y Negro')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 15 -->
+            <div class="product" data-category="Vestido">
+                <img src="PRD15.png" alt="Vestido Floreado Lila">
+                <h3>Vestido Floreado Lila</h3>
+                <p>Precio: Bs. 125</p>
+                <button onclick="guardarProducto('PRD15.png', 'Vestido Floreado Lila')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 16 -->
+            <div class="product" data-category="Jeans/ Jogger">
+                <img src="PRD16.png" alt="Jeans Acampanados">
+                <h3>Jeans Acampanados</h3>
+                <p>Precio: Bs. 135</p>
+                <button onclick="guardarProducto('PRD16.png', 'Jeans Acampanados')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 17 -->
+            <div class="product" data-category="Buzo/Chaqueta">
+                <img src="PRD17.png" alt="Buzo Guindo">
+                <h3>Buzo Guindo</h3>
+                <p>Precio: Bs. 120</p>
+                <button onclick="guardarProducto('PRD17.png', 'Buzo Guindo')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 18 -->
+            <div class="product" data-category="Falda">
+                <img src="PRD18.png" alt="Falda Jean Floreada">
+                <h3>Falda Jean Floreada</h3>
+                <p>Precio: Bs. 60</p>
+                <button onclick="guardarProducto('PRD18.png', 'Falda Jean Floreada')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 19 -->
+            <div class="product" data-category="Buzo/Chaqueta">
+                <img src="PRD19.png" alt="Chaqueta Bomber Guinda">
+                <h3>Chaqueta Bomber Guinda</h3>
+                <p>Precio: Bs. 140</p>
+                <button onclick="guardarProducto('PRD19.png', 'Chaqueta Bomber Guinda')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Producto 20 -->
+            <div class="product" data-category="Crop">
+                <img src="PRD20.png" alt="Crop Top Celeste Floreado">
+                <h3>Crop Top Celeste Floreado</h3>
+                <p>Precio: Bs. 75</p>
+                <button onclick="guardarProducto('PRD20.png', 'Crop Top Celeste Floreado')"><a>Ver Detalles</a></button>
+            </div>
+
+            <!-- Agrega más productos aquí -->
+        </section>
+
+    </Main>
+
+
+
+    <!-- BUSCADOR inicio-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchButton = document.getElementById("search-button");
+
+            searchButton.addEventListener("click", function() {
+                const searchText = document.getElementById("search-input").value.toLowerCase();
+                const products = document.querySelectorAll(".product");
+
+                products.forEach(function(product) {
+                    const productName = product.textContent.toLowerCase();
+                    if (productName.includes(searchText)) {
+                        product.style.display = "block"; // Muestra el producto
+                    } else {
+                        product.style.display = "none"; // Oculta el producto
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- BUSCADOR fin-->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const categoryLinks = document.querySelectorAll(".category-link");
+            const products = document.querySelectorAll(".product");
+
+            // Agrega un evento de clic a cada enlace de categoría
+            categoryLinks.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+
+                    // Obtén la categoría seleccionada desde el atributo data-category
+                    const selectedCategory = link.getAttribute("data-category");
+
+                    // Recorre todos los productos y muestra u oculta según la categoría
+                    products.forEach(function(product) {
+                        const productCategory = product.getAttribute("data-category");
+
+                        // Si la categoría seleccionada es "all" o coincide con la categoría del producto, muestra el producto
+                        if (selectedCategory === "all" || selectedCategory === productCategory) {
+                            product.style.display = "block";
+                        } else {
+                            product.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Teléfono</h4>
+                <p>67177161</p>
+            </div>
+            <div class="content-foo">
+                <h4>Correo</h4>
+                <p>TrueBeauty@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicación</h4>
+                <p>Local 18. Centro de Moda. Calle 21 San Miguel, La Paz</p>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="content-foo">
+                <h4>Redes Sociales</h4>
+
+                <a href="https://www.facebook.com/lucianaz2604/" target="_blank" rel="noopener noreferrer"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://twitter.com/lucianaz2604" target="_blank" rel="noopener noreferrer"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="https://wa.me/+59167177161" target="_blank" rel="noopener noreferrer"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/lialu_26/" target="_blank" rel="noopener noreferrer"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@lulu_26.5?lang=es" target="_blank" rel="noopener noreferrer"><img src="tiktok-icon.png" alt="TikTok"></a>
+                <a href="https://www.messenger.com/t/100008816411953" target="_blank" rel="noopener noreferrer"><img src="messenger-icon.png" alt="Messenger"></a>
+
+            </div>
+        </div>
+        <img src="IMAGENLOGO.png" alt="">
+        <h2 class="titulo-final">&copy; LZ Design | True Beauty</h2>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+/* Estilos CSS para la página de consulta de puntos */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.points-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #6290f3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0055a5;
+}
+
+
+/* Estilos CSS para la sección de Gift Cards */
+
+.gift-cards {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.gift-cards h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.gift-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.gift-card img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.gift-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+/* Estilos CSS para la sección de Productos Canjeables */
+
+.products {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #0000009b;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #4571ec9b;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(212, 95%, 50%, 0.459), hsla(230, 45%, 52%, 0.664)), url(../IMAGENINDEX1.png);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(212, 95%, 50%, 0.459), hsla(223, 45%, 52%, 0.664)), url(../IMAGENINDEX1.png);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav {
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav>a {
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav>a:hover {
+    text-decoration: underline;
+}
+
+header .textos-header {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.textos-header h2 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* footer */
+
+
+/* pie de página */
+
+footer {
+    background: #4571ec9b;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #fff;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ffffff;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #ffffff;
+}
+
+@media screen and (max-width:500px) {
+    nav {
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+    nav>a {
+        margin-right: 5px;
+    }
+    .textos-header h1 {
+        font-size: 35px;
+    }
+    .textos-header h2 {
+        font-size: 20px;
+    }
+    /* Footer */
+    .contenedor-footer {
+        flex-direction: column;
+        border: none;
+    }
+    .content-foo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .content-foo h4 {
+        border: none;
+    }
+    .content-foo p {
+        color: #ffffff;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+    .titulo-final {
+        font-size: 20px;
+    }
+}
+
+footer img {
+    max-width: 200px;
+    /* Ajusta el tamaño máximo de la imagen según tus preferencias */
+    height: auto;
+    margin-right: 50%;
+    margin-left: 45%;
+}
+
+
+/* Redes Sociales en el footer */
+
+.content-foo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content-foo a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.content-foo a img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.content-foo a:hover {
+    transform: scale(1.3);
+}

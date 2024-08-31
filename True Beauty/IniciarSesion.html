@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iniciar Sesión</title>
+    <link rel="shortcut icon" href="IMAGENLOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="IniciarSesión.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Puntos.html">Puntos</a>
+            <a href="Categorías.html">Categorías</a>
+            <a href="GiftCard.html">Gift Card</a>
+            <a href="QuienesSomos.html">Quiénes somos</a>
+            <a href="Contáctanos.html">Contáctanos</a>
+            <a href="Opiniones.html">Opiniones</a>
+            <a href="IniciarSesion.html">Iniciar Sesión</a>
+        </nav>
+        <section class="textos-header">
+            <h1>Iniciar Sesión</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;">
+                </path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="iniciar-sesion">
+            <h2 class="titulo">Inicia Sesión o Regístrate</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="user_name" />
+                </div>
+                <div class="form-group">
+                    <label for="apellido-paterno">Apellido Paterno:</label>
+                    <input type="text" id="apellido-paterno" name="user_apellido_paterno" />
+                </div>
+                <div class="form-group">
+                    <label for="apellido-materno">Apellido Materno:</label>
+                    <input type="text" id="apellido-materno" name="user_apellido_materno" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="user_email" />
+                </div>
+                <div class="form-group">
+                    <label for="ci">CI:</label>
+                    <input type="text" id="ci" name="user_ci" />
+                </div>
+                <div class="form-group">
+                    <label for="forma-pago">Forma de Pago:</label>
+                    <select name="forma-pago" id="forma-pago">
+                        <option value="tarjeta">Tarjeta</option>
+                        <option value="qr">QR</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Iniciar Sesión" />
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Función para mostrar la ventana emergente
+        function mostrarMensajeBienvenida() {
+            // Mensaje de bienvenida
+            var mensaje = "Bienvenid@ estimad@ usuari@";
+
+            // Mostrar una ventana emergente con el mensaje
+            alert(mensaje);
+        }
+
+        // Obtener el botón de inicio de sesión
+        var botonIniciarSesion = document.querySelector('form input[type="submit"]');
+
+        // Agregar un evento click al botón
+        botonIniciarSesion.addEventListener('click', mostrarMensajeBienvenida);
+    </script>
+
+
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Teléfono</h4>
+                <p>67177161</p>
+            </div>
+            <div class="content-foo">
+                <h4>Correo</h4>
+                <p>TrueBeauty@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicación</h4>
+                <p>Local 18. Centro de Moda. Calle 21 San Miguel, La Paz</p>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="content-foo">
+                <h4>Redes Sociales</h4>
+
+                <a href="https://www.facebook.com/lucianaz2604/" target="_blank" rel="noopener noreferrer"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://twitter.com/lucianaz2604" target="_blank" rel="noopener noreferrer"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="https://wa.me/+59167177161" target="_blank" rel="noopener noreferrer"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/lialu_26/" target="_blank" rel="noopener noreferrer"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@lulu_26.5?lang=es" target="_blank" rel="noopener noreferrer"><img src="tiktok-icon.png" alt="TikTok"></a>
+                <a href="https://www.messenger.com/t/100008816411953" target="_blank" rel="noopener noreferrer"><img src="messenger-icon.png" alt="Messenger"></a>
+
+            </div>
+        </div>
+        <img src="IMAGENLOGO.png" alt="">
+        <h2 class="titulo-final">&copy; LZ Design | True Beauty</h2>
+    </footer>
+</body>
+
+</html>
